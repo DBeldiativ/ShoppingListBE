@@ -251,6 +251,24 @@ router.post("/:id/restore", checkRole("owner"), (req, res) => {
   });
 });
 
+router.get("/:id", checkRole(["owner", "member"]), (req, res) => {
+  const shoppingListId = req.params.id;
+
+  const shoppingList = shoppingLists.find((list) => list.id === shoppingListId);
+  if (!shoppingList) {
+    return res.status(404).json({
+      error: "Shopping list not found",
+      uuAppErrorMap: {},
+    });
+  }
+
+  res.json({
+    ...shoppingList,
+    uuAppErrorMap: {},
+  });
+});
+
+
 
 module.exports = router;
 
