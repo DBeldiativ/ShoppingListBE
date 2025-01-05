@@ -1,0 +1,22 @@
+{
+    "user": {
+        "user_id": 1,
+        "username": "jiri_novak",
+        "email": "jiri@mail.com",
+        "password_hash": "hash123"
+    },
+    "shopping_list": {
+        "list_id": 1,
+        "list_name": "Weekly Groceries",
+        "owner_id": 1,
+        "created_at": "2025-01-05T10:00:00Z",
+        "items": [
+            { "item_name": "Milk", "quantity": 2, "is_completed": false }
+        ]
+    },
+    "list_member": {
+        "list_id": 1,
+        "user_id": 1,
+        "role": "owner"
+    }
+}
